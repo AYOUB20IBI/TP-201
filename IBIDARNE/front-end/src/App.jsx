@@ -1,13 +1,18 @@
 
+import { RouterProvider } from "react-router-dom"
+import { routerh } from "./app/route"
+
 function App() {
 
   return (
     <>
-    <div className="app">
-      <h1>React + Vite</h1>
-    </div>
+    <RouterProvider router={routerh}/>
     </>
   )
 }
 
 export default App
+
+
+
+
