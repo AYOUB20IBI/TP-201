@@ -3,6 +3,7 @@ import {Container, Row,Col,Card ,Button,Form } from 'react-bootstrap';
 import desing from './Accueil.module.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Accueil() {
     const [dataFormation,setDataFormation]=useState([]);
@@ -13,6 +14,8 @@ export default function Accueil() {
             setDataFormation(res.data)
         })
     },[])
+
+    const navigate =useNavigate()
 
     const searchInput = () => {
         let input = document.getElementById("search-input").value;
@@ -30,7 +33,12 @@ export default function Accueil() {
 
 
     const handleInscription =(id)=>{
-        alert(id)
+        let user = sessionStorage.getItem('email')
+        if (user) {
+            navigate(`/inscription/${id}`)
+        }else{
+            navigate('/login')
+        }
     }
 
   return (
@@ -92,9 +100,20 @@ export default function Accueil() {
                             <Card.Text>
                             <strong>Domaine : </strong>{item.domaine}<br></br>
                             </Card.Text>
-                            <Button variant="primary" onClick={() => handleInscription(item.id)}>
-                            {item.disponible ? 'Inscription' : 'Indisponible'}
+                            {item.disponible ?
+                                <Button variant="primary" onClick={() => handleInscription(item.id)}>
+                                    Inscription
+                                </Button>
+                                :
+                                <Button variant="primary">
+                                    Indisponible
+                                </Button>
+                            }
+                            <Button variant="outline-danger" disabled className='m-1'>
+                                {item.niveau}
                             </Button>
+
+                            
                         </Card.Body>
                     </Card>
                    ))
@@ -110,9 +129,15 @@ export default function Accueil() {
                             <Card.Text>
                             <strong>Domaine : </strong>{item.domaine}<br></br>
                             </Card.Text>
-                            <Button variant="primary" onClick={() => handleInscription(item.id)} className='m-1'>
-                            {item.disponible ? 'Inscription' : 'Indisponible'}
-                            </Button>
+                            {item.disponible ?
+                                <Button variant="primary" onClick={() => handleInscription(item.id)}>
+                                    Inscription
+                                </Button>
+                                :
+                                <Button variant="primary">
+                                    Indisponible
+                                </Button>
+                            }
                             <Button variant="outline-danger" disabled className='m-1'>
                                 {item.niveau}
                             </Button>

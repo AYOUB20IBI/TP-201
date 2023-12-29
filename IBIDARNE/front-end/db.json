@@ -23,14 +23,22 @@
       "niveau": "Intermédiaire",
       "description": "Techniques de design graphique appliquées à la création de sites web attractifs.",
       "disponible": true
+    },
+    {
+      "titre": "mysql",
+      "domaine": "Informatique",
+      "niveau": "Avancé",
+      "description": "sfgdhjhgfjhgkjhkj",
+      "disponible": "true",
+      "id": 105
     }
   ],
   "utilisateurs": [
     {
       "id": 201,
       "nom": "Alice Dupont",
-      "email":"alice@gmail.com",
-      "password":"12345678",
+      "email": "alice@gmail.com",
+      "password": "12345678",
       "role": "Participant",
       "formations_inscrites": [
         101,
@@ -41,21 +49,22 @@
       "id": 202,
       "nom": "Jean Martin",
       "email": "martin@gmail.com",
-      "password":"12345678",
+      "password": "12345678",
       "role": "Formateur",
       "formations_enseignees": [
         101
       ]
     },
     {
-      "id": 203,
       "nom": "Marie Curie",
-      "email":"marie@gmail.com",
-      "password":"12345678",
       "role": "Participant",
+      "email": "marie@gmail.com",
+      "password": "12345678",
       "formations_inscrites": [
-        102
-      ]
+        102,
+        "101"
+      ],
+      "id": 203
     },
     {
       "nom": "aniss",

@@ -27,7 +27,7 @@ export default function LayoutUsers() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link><Link to='/'>Home</Link></Nav.Link>
+                <Nav.Link><Link to='/users/home'>Home</Link></Nav.Link>
                   <Nav.Link ><Link to='/users/profile'>Profile</Link></Nav.Link>
                 </Nav>
               </Offcanvas.Body>

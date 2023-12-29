@@ -27,9 +27,8 @@ export default function LayoutFormateur() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-                  <Nav.Link href="#action2"><Link to='/formateur/ajouter'>Ajouter Formation</Link></Nav.Link>
-                  <Nav.Link href="#action2">Supprimer Formation</Nav.Link>
+                <Nav.Link><Link to='/formateur/home'>Home</Link></Nav.Link>
+                  <Nav.Link ><Link to='/formateur/ajouter'>Ajouter Formation</Link></Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

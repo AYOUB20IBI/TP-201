@@ -49,7 +49,14 @@ export default function Profile() {
             <th scope="row">{datauser.id}</th>
             <td>{datauser.nom}</td>
             <td>{datauser.email}</td>
-            <td>{datauser.formations_inscrites}</td>
+            <td>
+                {
+                  datauser.formations_inscrites &&
+                  datauser.formations_inscrites.map((v, index) => (
+                    <span key={index}>{v}/</span>
+                  ))
+                }
+            </td>
           </tr>
         </tbody>
       </table>

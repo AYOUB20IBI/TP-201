@@ -7,6 +7,8 @@ import Layout from "../layouts/Layout";
 import Ajouter from "../components/formateur/Ajouter";
 import Login from "../auth/Login";
 import Profile from './../components/users/Profile';
+import Home from "../components/formateur/Home";
+import Inscription from "../components/HomePage/Inscription";
 
 
 export const routerh = createBrowserRouter([
@@ -33,6 +35,10 @@ export const routerh = createBrowserRouter([
             {
                 path:"/users/profile",
                 element:<Profile/>
+            },
+            {
+                path:'/inscription/:id',
+                element:<Inscription/>
             }
         ]
     },
@@ -41,7 +47,7 @@ export const routerh = createBrowserRouter([
         children:[
             {
                 path:"/formateur/home",
-                element:<Accueil/>
+                element:<Home/>
             },
             {
                 path:"/formateur/ajouter",
