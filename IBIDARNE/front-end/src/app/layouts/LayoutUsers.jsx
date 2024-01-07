@@ -9,6 +9,11 @@ export default function LayoutUsers() {
       navigate('/login')
     }
   },[])
+
+  const logout=()=>{
+    sessionStorage.clear()
+    return navigate('/login')
+  }
   return (
     <>
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -29,6 +34,7 @@ export default function LayoutUsers() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link><Link to='/users/home'>Home</Link></Nav.Link>
                   <Nav.Link ><Link to='/users/profile'>Profile</Link></Nav.Link>
+                  <Nav.Link onClick={logout}>LogOut</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

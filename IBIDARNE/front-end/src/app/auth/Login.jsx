@@ -26,19 +26,20 @@ export default function Login() {
             const users = response.data;
 
             const foundUser = users.find((item) => email === item.email && password === item.password);
-
-            if (foundUser.role==='Participant') {
+            if(foundUser){
+              if (foundUser.role==='Participant') {
+                  sessionStorage.setItem('nom',foundUser.nom);
+                  sessionStorage.setItem('email',foundUser.email);
+                  sessionStorage.setItem('role',foundUser.role);
+                  sessionStorage.setItem('id',foundUser.id);
+                  navigate('/users/home');
+              }else if (foundUser.role==='Formateur') {
                 sessionStorage.setItem('nom',foundUser.nom);
                 sessionStorage.setItem('email',foundUser.email);
                 sessionStorage.setItem('role',foundUser.role);
                 sessionStorage.setItem('id',foundUser.id);
-                navigate('/users/home');
-            }else if (foundUser.role==='Formateur') {
-              sessionStorage.setItem('nom',foundUser.nom);
-              sessionStorage.setItem('email',foundUser.email);
-              sessionStorage.setItem('role',foundUser.role);
-              sessionStorage.setItem('id',foundUser.id);
-              navigate('/formateur/home');
+                navigate('/formateur/home');
+              }
             }else {
                 alert('Email ou mot de passe incorrect !');
             }

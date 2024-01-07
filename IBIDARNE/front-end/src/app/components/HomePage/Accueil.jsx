@@ -33,8 +33,8 @@ export default function Accueil() {
 
 
     const handleInscription =(id)=>{
-        let user = sessionStorage.getItem('email')
-        if (user) {
+        let user = sessionStorage.getItem('role')
+        if (user === 'Participant') {
             navigate(`/inscription/${id}`)
         }else{
             navigate('/login')
@@ -101,7 +101,7 @@ export default function Accueil() {
                             <strong>Domaine : </strong>{item.domaine}<br></br>
                             </Card.Text>
                             {item.disponible ?
-                                <Button variant="primary" onClick={() => handleInscription(item.id)}>
+                                <Button variant="primary" onClick={()=>{handleInscription(item.id)}}>
                                     Inscription
                                 </Button>
                                 :

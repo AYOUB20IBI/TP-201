@@ -8,21 +8,26 @@ export default function Ajouter() {
   const [niveau, setNiveau] = useState(null)
   const [disponible, setDisponible] = useState(false)
 
+  const formateur = sessionStorage.getItem('role')
+
 
   const handleAjouter=(e)=>{
     e.preventDefault()
-    if(disponible==="true"){
-      setDisponible(true)
+    if(formateur==='Formateur'){
+      if(disponible==="true"){
+        setDisponible(true)
+      }
+      axios.post('http://localhost:3000/formations',{
+        titre:titre,
+        domaine:domaine,
+        niveau:niveau,
+        description:description,
+        disponible:disponible
+      }).then(()=>{
+        alert('good job')
+      })
     }
-    axios.post('http://localhost:3000/formations',{
-      titre:titre,
-      domaine:domaine,
-      niveau:niveau,
-      description:description,
-      disponible:disponible
-    }).then(()=>{
-      alert('good job')
-    })
+    
   }
   return (
     <>

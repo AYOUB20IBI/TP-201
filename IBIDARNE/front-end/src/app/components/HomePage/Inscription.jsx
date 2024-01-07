@@ -15,9 +15,7 @@ export default function Inscription() {
             console.log(res.data);
             setData(res.data);
         });
-        if(data.role!=='Participant'){
-            navigate('/')
-        }
+
     }, []);
 
     const handleEnv = (e) => {

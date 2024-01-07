@@ -9,6 +9,11 @@ export default function LayoutFormateur() {
       navigate('/login')
     }
   },[])
+  
+  const logout=()=>{
+    sessionStorage.clear()
+    return navigate('/login')
+  }
   return (
     <>
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -29,7 +34,9 @@ export default function LayoutFormateur() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link><Link to='/formateur/home'>Home</Link></Nav.Link>
                   <Nav.Link ><Link to='/formateur/ajouter'>Ajouter Formation</Link></Nav.Link>
+                  <Nav.Link onClick={logout}>LogOut</Nav.Link>
                 </Nav>
+
               </Offcanvas.Body>
             </Navbar.Offcanvas>
       </Container>

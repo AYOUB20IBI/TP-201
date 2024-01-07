@@ -28,7 +28,15 @@
       "titre": "mysql",
       "domaine": "Informatique",
       "niveau": "Avancé",
-      "description": "sfgdhjhgfjhgkjhkj",
+      "description": "mysql",
+      "disponible": "true",
+      "id": 104
+    },
+    {
+      "titre": "SQL",
+      "domaine": "Informatique",
+      "niveau": "Avancé",
+      "description": "SQL",
       "disponible": "true",
       "id": 105
     }
@@ -68,10 +76,12 @@
     },
     {
       "nom": "aniss",
-      "email": "aniss@gmail.com",
       "role": "Participant",
+      "email": "aniss@gmail.com",
       "password": "1234567890",
-      "formations_inscrites": "103",
+      "formations_inscrites": [
+        103
+      ],
       "id": 204
     },
     {
@@ -79,7 +89,9 @@
       "email": "reda@gmail.com",
       "role": "Participant",
       "password": "asgdhgfhfhfgh",
-      "formations_inscrites": "103",
+      "formations_inscrites": [
+        103
+      ],
       "id": 205
     }
   ]
